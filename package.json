@@ -1,0 +1,19 @@
+{
+  "name": "mid-front-end",
+  "version": "1.0.0",
+  "description": "mid-front-end-UK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S21810014/mid-front-end.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/S21810014/mid-front-end/issues"
+  },
+  "homepage": "https://github.com/S21810014/mid-front-end#readme"
+}
