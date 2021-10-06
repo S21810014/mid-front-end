@@ -60,6 +60,11 @@
             border: 0.1em solid white;
         }
 
+        .delBtn { 
+            padding-top: 0em; 
+            padding-bottom: 0.25em;
+        }
+
         .addStudFormCard {
             background-color: #e58b87;
         }
@@ -128,10 +133,10 @@
                 <div class="collapse mt-3" id="addStudForm">
                     <div class="card addStudFormCard p-3">
                         <p>Student ID (NIM)</p>
-                        <input class="form-control" type="text" placeholder="105021810001">
+                        <input class="form-control" type="text" placeholder="105021810001" id='addStudFormStudID'>
                         
                         <p>Full Name</p>
-                        <input class="form-control" type="text" placeholder="Jon Tumambi">
+                        <input class="form-control" type="text" placeholder="Jon Tumambi" id='addStudFormStudName'>
                         
                         <p>Gender</p>
                         <div class="form-check">
@@ -165,7 +170,7 @@
                             <option selected>-- SELECT PROGRAM OF STUDY --</option>
                         </select>
 
-                        <button type="button" class="btn whiteBtn mt-4">Add Student</button>
+                        <button type="button" class="btn whiteBtn mt-4" id='addStudFormAddBtn'>Add Student</button>
                     </div>
                 </div>
             </div>
@@ -228,7 +233,7 @@
                 <input class="form-control" type="text" placeholder="Search student by name">
 
                 <div class="card mt-4">
-                    <table class="table table-striped table-borderless">
+                    <table class="table table-striped table-borderless" id="studentsTable">
                         <thead>
                             <tr>
                                 <th scope="col">Student ID (NIM)</th>
@@ -240,62 +245,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1050xxx</td>
-                                <td>Joan</td>
-                                <td>Male</td>
-                                <td>Fakultas Ilmu Komputer</td>
-                                <td>Informatika</td>
-                                <td>
-                                    <button type="button" class="btn redBtn" style="padding-top: 0em; padding-bottom: 0.25em;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" class="bi bi-person-x-fill" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
-                                        </svg>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1050xxx</td>
-                                <td>Joan</td>
-                                <td>Male</td>
-                                <td>Fakultas Ilmu Komputer</td>
-                                <td>Informatika</td>
-                                <td>
-                                    <button type="button" class="btn redBtn" style="padding-top: 0em; padding-bottom: 0.25em;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" class="bi bi-person-x-fill" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
-                                        </svg>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1050xxx</td>
-                                <td>Joan</td>
-                                <td>Male</td>
-                                <td>Fakultas Ilmu Komputer</td>
-                                <td>Informatika</td>
-                                <td>
-                                    <button type="button" class="btn redBtn" style="padding-top: 0em; padding-bottom: 0.25em;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" class="bi bi-person-x-fill" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
-                                        </svg>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1050xxx</td>
-                                <td>Joan</td>
-                                <td>Male</td>
-                                <td>Fakultas Ilmu Komputer</td>
-                                <td>Informatika</td>
-                                <td>
-                                    <button type="button" class="btn redBtn" style="padding-top: 0em; padding-bottom: 0.25em;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" class="bi bi-person-x-fill" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
-                                        </svg>
-                                    </button>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
