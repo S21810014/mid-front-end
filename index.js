@@ -1,3 +1,5 @@
+import createListOption from './create_list_option.js'
+
 const dropdownData = {
     'Pascasarjana' : [
         'Magister Manajemen',
@@ -31,3 +33,20 @@ const dropdownData = {
         'Sekretari (D3)',
     ],
 }
+
+const programOfStudyDropdown = document.getElementById('addStudFormPOS')
+const facultyDropdown = document.getElementById('addStudFormFac')
+
+facultyDropdown.addEventListener('change', e => {
+    const selectedFaculty = e.target.value
+
+    //clear the dropdown before adding data
+    programOfStudyDropdown.innerHTML = null
+
+    console.log(createListOption)
+
+    //add the program of study based on selected faculty
+    for(const programOfStudy of dropdownData[selectedFaculty]) {
+        programOfStudyDropdown.appendChild(createListOption(programOfStudy))
+    }
+})
