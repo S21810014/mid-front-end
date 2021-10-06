@@ -2,16 +2,297 @@
 <head>
     <title>Document</title>
 
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <style>
+        .greyBtn {
+            background-color: #84848f;
+            color: white;
+            border: 0.1em solid transparent;
+        }
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        .greyBtn:hover {
+            background-color: white;
+            color: #84848f;
+            border: 0.1em solid #84848f;
+        }
+
+        .greyBtn:active {
+            background-color: #84848f;
+            color: #84848f;
+            border: 0.1em solid transparent;
+        }
+
+        .redBtn {
+            background-color: red;
+            color: white;
+            border: 0.1em solid transparent;
+        }
+
+        .redBtn:hover {
+            background-color: white;
+            color: red;
+            border: 0.1em solid red;
+        }
+
+        .redBtn:active {
+            background-color: red;
+            color: red;
+            border: 0.1em solid transparent;
+        }
+
+        .whiteBtn {
+            background-color: white;
+            color: black;
+            border: 0.1em solid transparent;
+            width: 100%;
+        }
+
+        .whiteBtn:hover {
+            background-color: white;
+            color: black;
+            border: 0.1em solid #e58b87;
+        }
+
+        .whiteBtn:active {
+            background-color: #e58b87;
+            color: white;
+            border: 0.1em solid white;
+        }
+
+        .addStudFormCard {
+            background-color: #e58b87;
+        }
+
+        .addStudFormCard > p {
+            color: white;
+            margin: 1em 0em 0em 0em;
+        }
+
+        .form-check-input:checked {
+            background-color: #e58b87;
+            border: 1px solid white;
+        }
+
+        .form-check-label {
+            color: white;
+        }
+        
+        h4, p {
+            color: #84848f;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello world!</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e58b87 !important;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Student Management MiniApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Title Row -->
+        <div class="row">
+            <div class="col">
+                <h1 class="display-4 mt-4">
+                    <span style="color: #e58b87;">Student Management</span><br/>
+                    <span style="color: #84848f;">MiniApp</span>
+                </h1>
+
+                <div class="my-4" style="height: 0.1em; background-color: #e58b87;"></div>
+            </div>
+        </div>
+        
+        <!-- Add and Filter Student Row -->
+        <div class="row">
+            <!-- Add Student Leftside Column -->
+            <div class="col">
+                <h4>Add Student</h4>
+
+                <button type="button" class="btn greyBtn" data-bs-toggle="collapse" data-bs-target="#addStudForm">Testing</button>
+
+                <div class="collapse mt-3" id="addStudForm">
+                    <div class="card addStudFormCard p-3">
+                        <p>Student ID (NIM)</p>
+                        <input class="form-control" type="text" placeholder="105021810001">
+                        
+                        <p>Full Name</p>
+                        <input class="form-control" type="text" placeholder="Jon Tumambi">
+                        
+                        <p>Gender</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="genderRadioBtn" id="genderRadioBtnMale" checked>
+                            <label class="form-check-label" for="genderRadioBtnMale">
+                                Male
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="genderRadioBtn" id="genderRadioBtnFemale">
+                            <label class="form-check-label" for="genderRadioBtnFemale">
+                                Female
+                            </label>
+                        </div>
+
+                        <p>Faculty</p>
+                        <select class='form-select'>
+                            <option selected></option>
+                            <option value="1">testing</option>
+                            <option value="1">testing</option>
+                            <option value="1">testing</option>
+                            <option value="1">testing</option>
+                        </select>
+
+                        <p>Program of Study</p>
+                        <select class='form-select'>
+                            <option selected></option>
+                            <option value="1">testing</option>
+                            <option value="1">testing</option>
+                            <option value="1">testing</option>
+                            <option value="1">testing</option>
+                        </select>
+
+                        <button type="button" class="btn whiteBtn mt-4">Add Student</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Janky separator XD -->
+            <div class="col-md-auto">
+                <div style="background-color: #e58b87; width: 0.1em; height: 100%;"></div>
+            </div>
+
+            <!-- Filter Student Rightside Column -->
+            <div class="col-md-4">
+                <h4>Filter Student By</h4>
+
+                <p>Faculty</p>
+                <select class='form-select'>
+                    <option selected></option>
+                    <option value="1">testing</option>
+                    <option value="1">testing</option>
+                    <option value="1">testing</option>
+                    <option value="1">testing</option>
+                </select>
+                <button type="button" class="btn greyBtn mt-2 mb-4">Show Students</button>
+
+                <p>Program of Study</p>
+                <select class='form-select'>
+                    <option selected></option>
+                    <option value="1">testing</option>
+                    <option value="1">testing</option>
+                    <option value="1">testing</option>
+                    <option value="1">testing</option>
+                </select>
+                <button type="button" class="btn greyBtn mt-2">Show Students</button>
+            </div>
+        </div>
+
+        <!-- Student Table Row -->
+        <div class="row">
+            <div class="col">
+                <div class="my-4" style="height: 0.1em; background-color: #e58b87;"></div>
+
+                <h1 class="display-4 mt-4 text-center">
+                    <span style="color: #e58b87;">Our Students</span>
+                </h1>
+
+                <input class="form-control" type="text" placeholder="Search student by name">
+
+                <div class="card mt-4">
+                    <table class="table table-striped table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Student ID (NIM)</th>
+                                <th scope="col">Full Name</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Faculty</th>
+                                <th scope="col">Program of Study</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1050xxx</td>
+                                <td>Joan</td>
+                                <td>Male</td>
+                                <td>Fakultas Ilmu Komputer</td>
+                                <td>Informatika</td>
+                                <td>
+                                    <button type="button" class="btn redBtn" style="padding-top: 0em; padding-bottom: 0.25em;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" class="bi bi-person-x-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1050xxx</td>
+                                <td>Joan</td>
+                                <td>Male</td>
+                                <td>Fakultas Ilmu Komputer</td>
+                                <td>Informatika</td>
+                                <td>
+                                    <button type="button" class="btn redBtn" style="padding-top: 0em; padding-bottom: 0.25em;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" class="bi bi-person-x-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1050xxx</td>
+                                <td>Joan</td>
+                                <td>Male</td>
+                                <td>Fakultas Ilmu Komputer</td>
+                                <td>Informatika</td>
+                                <td>
+                                    <button type="button" class="btn redBtn" style="padding-top: 0em; padding-bottom: 0.25em;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" class="bi bi-person-x-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1050xxx</td>
+                                <td>Joan</td>
+                                <td>Male</td>
+                                <td>Fakultas Ilmu Komputer</td>
+                                <td>Informatika</td>
+                                <td>
+                                    <button type="button" class="btn redBtn" style="padding-top: 0em; padding-bottom: 0.25em;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" class="bi bi-person-x-fill" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid mt-4 pt-2 text-center" style="background-color: #e58b87 !important; color: white; margin-bottom: -1em;">
+        <p style="height: 5em; color: white;"> timothy tiwow © 2021 </p>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 </body>
 </html>
