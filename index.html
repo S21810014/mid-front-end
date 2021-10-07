@@ -85,8 +85,9 @@
 
         .popOvr {
             position: absolute;
-            background-color: white; 
-            left: 50%; 
+            background-color: #84848f; 
+            color: white;
+            left: 25%; 
             top: -3em;
             padding: 0.5em;
             border-radius: 5em;
@@ -100,7 +101,7 @@
             margin-left: -5px;
             border-width: 0.5em;
             border-style: solid;
-            border-color: white transparent transparent transparent;
+            border-color: #84848f transparent transparent transparent;
         }
         
         h4, p {
@@ -156,15 +157,15 @@
                         
                         <!-- Wrapping text input to a div so i can position popover near the input box -->
                         <div class="inputValidWrapper" style="position: relative;">
-                            <input class="form-control" type="text" placeholder="105021810001" id='addStudFormStudID'>
-                            <p class="popOvr">Popover!</p>
+                            <input class="form-control noLetter" type="text" placeholder="105021810001" id='addStudFormStudID'>
+                            <p class="popOvr">Student ID can't have non-number digit or be empty</p>
                         </div>
                         
                         <p>Full Name</p>
 
                         <div class="inputValidWrapper" style="position: relative;">
-                            <input class="form-control" type="text" placeholder="Jon Tumambi" id='addStudFormStudName'>
-                            <p class="popOvr">Popover!</p>
+                            <input class="form-control noNumeric" type="text" placeholder="Jon Tumambi" id='addStudFormStudName'>
+                            <p class="popOvr">Full Name can't have non-letter character or be empty</p>
                         </div>
 
                         <p>Gender</p>
@@ -183,7 +184,7 @@
 
                         <p>Faculty</p>
                         <div class="inputValidWrapper" style="position: relative;">
-                            <select class='form-select' id="addStudFormFac">
+                            <select class='form-select noDefaultSelected' id="addStudFormFac">
                                 <option selected>-- SELECT FACULTY --</option>
                                 <option>Pascasarjana</option>
                                 <option>Fakultas Filsafat</option>
@@ -194,15 +195,15 @@
                                 <option>Fakultas Keperawatan</option>
                                 <option>Akademi Sekretari Manajemen Indonesia Klabat</option>
                             </select>
-                            <p class="popOvr">Popover!</p>
+                            <p class="popOvr">Please select a faculty</p>
                         </div>
 
                         <p>Program of Study</p>
                         <div class="inputValidWrapper" style="position: relative;">
-                            <select class='form-select' id="addStudFormPOS">
+                            <select class='form-select noDefaultSelected' id="addStudFormPOS">
                                 <option selected>-- SELECT PROGRAM OF STUDY --</option>
                             </select>
-                            <p class="popOvr">Popover!</p>
+                            <p class="popOvr">Please select a program of study</p>
                         </div>
 
                         <button type="button" class="btn whiteBtn mt-4" id='addStudFormAddBtn'>Add Student</button>
