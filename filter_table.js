@@ -9,11 +9,33 @@ export default (studentTableObject, query = '', filterBy = 'none') => {
             break
         }
         case "faculty" : {
-            console.log(studentTableObject.children[1].children)
+            if(query == '-- SELECT FACULTY --') {
+                for(const tableRow of Array.from(studentTableObject.children[0].children).splice(1))
+                    tableRow.style.display = null
+               
+                break
+            }
+            
+            for(const tableRow of Array.from(studentTableObject.children[0].children).splice(1))
+                if(tableRow.children[3].innerText.includes(query))
+                    tableRow.style.display = null
+                else
+                    tableRow.style.display = 'none'
             break
         }
         case "programOfStudy" : {
-            console.log(studentTableObject.children[1].children)
+            if(query == '-- SELECT PROGRAM OF STUDY --') {
+                for(const tableRow of Array.from(studentTableObject.children[0].children).splice(1))
+                    tableRow.style.display = null
+                
+                break
+            }
+
+            for(const tableRow of Array.from(studentTableObject.children[0].children).splice(1))
+                if(tableRow.children[4].innerText.includes(query))
+                    tableRow.style.display = null
+                else
+                    tableRow.style.display = 'none'
             break
         }
         default: {
