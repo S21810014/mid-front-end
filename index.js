@@ -1,6 +1,7 @@
 import createListOption from './create_list_option.js'
 import addStudentToTable from './add_student_to_table.js'
 import setupValidation from './setup_validation.js'
+import filterTable from './filter_table.js'
 
 const dropdownData = {
     'Pascasarjana' : [
@@ -151,3 +152,4 @@ addStudentBtn.addEventListener('click', e => {
     //manually reset faculty dropdown menu
     facultyDropdown.value = '-- SELECT FACULTY --'
 })
+
