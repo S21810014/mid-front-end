@@ -82,6 +82,26 @@
         .form-check-label {
             color: white;
         }
+
+        .popOvr {
+            position: absolute;
+            background-color: white; 
+            left: 50%; 
+            top: -3em;
+            padding: 0.5em;
+            border-radius: 5em;
+        }
+
+        .popOvr::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 0.5em;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
         
         h4, p {
             color: #84848f;
@@ -130,14 +150,23 @@
 
                 <button type="button" class="btn greyBtn" data-bs-toggle="collapse" data-bs-target="#addStudForm">Testing</button>
 
-                <div class="collapse mt-3" id="addStudForm">
+                <div class="collapse mt-3 show" id="addStudForm">
                     <div class="card addStudFormCard p-3">
                         <p>Student ID (NIM)</p>
-                        <input class="form-control" type="text" placeholder="105021810001" id='addStudFormStudID'>
+                        
+                        <!-- Wrapping text input to a div so i can position popover near the input box -->
+                        <div class="inputValidWrapper" style="position: relative;">
+                            <input class="form-control" type="text" placeholder="105021810001" id='addStudFormStudID'>
+                            <p class="popOvr">Popover!</p>
+                        </div>
                         
                         <p>Full Name</p>
-                        <input class="form-control" type="text" placeholder="Jon Tumambi" id='addStudFormStudName'>
-                        
+
+                        <div class="inputValidWrapper" style="position: relative;">
+                            <input class="form-control" type="text" placeholder="Jon Tumambi" id='addStudFormStudName'>
+                            <p class="popOvr">Popover!</p>
+                        </div>
+
                         <p>Gender</p>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="genderRadioBtn" id="genderRadioBtnMale" checked>
@@ -153,22 +182,28 @@
                         </div>
 
                         <p>Faculty</p>
-                        <select class='form-select' id="addStudFormFac">
-                            <option selected>-- SELECT FACULTY --</option>
-                            <option>Pascasarjana</option>
-                            <option>Fakultas Filsafat</option>
-                            <option>Fakultas Keguruan dan Ilmu Pendidikan</option>
-                            <option>Fakultas Ekonomi dan Bisnis</option>
-                            <option>Fakultas Pertanian</option>
-                            <option>Fakultas Ilmu Komputer</option>
-                            <option>Fakultas Keperawatan</option>
-                            <option>Akademi Sekretari Manajemen Indonesia Klabat</option>
-                        </select>
+                        <div class="inputValidWrapper" style="position: relative;">
+                            <select class='form-select' id="addStudFormFac">
+                                <option selected>-- SELECT FACULTY --</option>
+                                <option>Pascasarjana</option>
+                                <option>Fakultas Filsafat</option>
+                                <option>Fakultas Keguruan dan Ilmu Pendidikan</option>
+                                <option>Fakultas Ekonomi dan Bisnis</option>
+                                <option>Fakultas Pertanian</option>
+                                <option>Fakultas Ilmu Komputer</option>
+                                <option>Fakultas Keperawatan</option>
+                                <option>Akademi Sekretari Manajemen Indonesia Klabat</option>
+                            </select>
+                            <p class="popOvr">Popover!</p>
+                        </div>
 
                         <p>Program of Study</p>
-                        <select class='form-select' id="addStudFormPOS">
-                            <option selected>-- SELECT PROGRAM OF STUDY --</option>
-                        </select>
+                        <div class="inputValidWrapper" style="position: relative;">
+                            <select class='form-select' id="addStudFormPOS">
+                                <option selected>-- SELECT PROGRAM OF STUDY --</option>
+                            </select>
+                            <p class="popOvr">Popover!</p>
+                        </div>
 
                         <button type="button" class="btn whiteBtn mt-4" id='addStudFormAddBtn'>Add Student</button>
                     </div>
