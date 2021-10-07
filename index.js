@@ -53,6 +53,9 @@ const programOfStudyDropdown = document.getElementById('addStudFormPOS')
 const facultyDropdown = document.getElementById('addStudFormFac')
 const addStudentBtn = document.getElementById('addStudFormAddBtn')
 const studentsTable = document.getElementById('studentsTable')
+const searchStudentInput = document.getElementById('searchStudentInput')
+const showStudentByFacultyBtn = document.getElementById('showStudByFac')
+const showStudentByPOSBtn = document.getElementById('showStudByPOS')
 
 //queries div with 'addStudFormCard' class name, then query all child div with 'inputValidWrapper' class name
 const needValidInputs = document.getElementsByClassName("addStudFormCard")[0].querySelectorAll(".inputValidWrapper")
@@ -153,3 +156,6 @@ addStudentBtn.addEventListener('click', e => {
     facultyDropdown.value = '-- SELECT FACULTY --'
 })
 
+searchStudentInput.addEventListener('keyup', e => {
+    filterTable(studentsTable, e.target.value)
+})
