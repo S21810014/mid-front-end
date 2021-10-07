@@ -1,2 +1,3 @@
-# mid-front-end
-mid-front-end-UK
+# Front-end Web Development - Mid-term Project
+
+October 2021
