@@ -1,6 +1,7 @@
 import createListOption from './create_list_option.js'
 import addStudentToTable from './add_student_to_table.js'
 import setupValidation from './setup_validation.js'
+import filterTable from './filter_table.js'
 
 const dropdownData = {
     'Pascasarjana' : [
@@ -52,6 +53,9 @@ const programOfStudyDropdown = document.getElementById('addStudFormPOS')
 const facultyDropdown = document.getElementById('addStudFormFac')
 const addStudentBtn = document.getElementById('addStudFormAddBtn')
 const studentsTable = document.getElementById('studentsTable')
+const searchStudentInput = document.getElementById('searchStudentInput')
+const showStudentByFacultyBtn = document.getElementById('showStudByFac')
+const showStudentByPOSBtn = document.getElementById('showStudByPOS')
 
 //queries div with 'addStudFormCard' class name, then query all child div with 'inputValidWrapper' class name
 const needValidInputs = document.getElementsByClassName("addStudFormCard")[0].querySelectorAll(".inputValidWrapper")
@@ -150,4 +154,8 @@ addStudentBtn.addEventListener('click', e => {
     
     //manually reset faculty dropdown menu
     facultyDropdown.value = '-- SELECT FACULTY --'
+})
+
+searchStudentInput.addEventListener('keyup', e => {
+    filterTable(studentsTable, e.target.value)
 })
