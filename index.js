@@ -34,6 +34,15 @@ const dropdownData = {
     'Akademi Sekretari Manajemen Indonesia Klabat' : [
         'Sekretari (D3)',
     ],
+
+    //need to add this default value because resetting the faculty dropdown will trigger 'change'
+    //event, and if after that we modify the program of study dropdown, it might not work
+    //
+    //so we added this option to make sure that if the faculty dropdown is reset back to default value,
+    //we are also resetting the program of study dropdown
+    '-- SELECT FACULTY --' : [
+        '-- SELECT PROGRAM OF STUDY --',
+    ]
 }
 
 //pre-initialize studentsTable with sample students
@@ -132,4 +141,13 @@ addStudentBtn.addEventListener('click', e => {
         studentFaculty: studentFaculty,
         studentProgramOfStudy: studentProgramOfStudy
     }, studentsTable)
+
+    //reset all inputs
+
+    //reset inputs except the dropdown menus
+    for(const input of Array.from(needValidInputs).splice(0, needValidInputs.length - 2))
+        input.children[0].value = ''
+    
+    //manually reset faculty dropdown menu
+    facultyDropdown.value = '-- SELECT FACULTY --'
 })
