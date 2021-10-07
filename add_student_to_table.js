@@ -1,10 +1,8 @@
 export default (studentObject, htmlTableObject) => {
     let row = htmlTableObject.insertRow()
-    console.log(row, studentObject)
     let i = 0
 
     for(const values of Object.keys(studentObject)) {
-        console.log(values)
         row.insertCell(i).innerHTML = studentObject[values]
         i++
     }
